@@ -2,14 +2,14 @@ namespace UploadService.Models;
 
 public class Account
 {
-    public int id { get; set; }
-    public string userId { get; set; }
-    public string accountName { get; set; }
-    public string balance { get; set; }
-    public string currency { get; set; }
-    public string status { get; set; }
-    public DateTime createAt { get; set; }
-    public DateTime updateAt { get; set; }
-    public string email { get; set; }
-    public string phone { get; set; }
+    public int Id { get; set; }
+    public string UserId { get; set; }
+    public string AccountName { get; set; }
+    public string Balance { get; set; }
+    public string Currency { get; set; }
+    public string Status { get; set; }
+    public DateTime CreateAt { get; set; }
+    public DateTime UpdateAt { get; set; }
+    public string Email { get; set; }
+    public string Phone { get; set; }
 }

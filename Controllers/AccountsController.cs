@@ -23,8 +23,19 @@ public class AccountsController : ControllerBase
     [HttpPost("uploadAccountFile")]
     public async Task<IActionResult> UploadAccountFileFromApi([FromQuery] string accountFilePath)
     {
+        if (string.IsNullOrEmpty(accountFilePath))
+        {
+            return BadRequest("File path is required.");
+        }
+
+        if (!System.IO.File.Exists(accountFilePath))
+        {
+            return NotFound("File not found.");
+        }
+
         await _accountService.UploadAccountFromFileAsync(accountFilePath);
         return Ok();
     }
+
     
 }
