@@ -12,7 +12,12 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
+      <PackageReference Include="PostSharp" Version="2025.0.1-preview" />
       <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+      <PackageReference Include="Serilog" Version="4.1.0-dev-02238" />
+      <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+      <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+      <PackageReference Include="Serilog.Sinks.Http" Version="9.0.0" />
     </ItemGroup>
 
 </Project>

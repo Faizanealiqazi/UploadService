@@ -1,14 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
 using UploadService.Services;
 
-namespace UploadService.Controllers;
-
-public class RabbitMQController : ControllerBase
+namespace UploadService.Controllers
 {
-    private readonly RabbitMQService _rabbitMQService;
-
-    public RabbitMQController(RabbitMQService rabbitMQService)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class RabbitMQController : ControllerBase
     {
-        _rabbitMQService = rabbitMQService;
+        private readonly RabbitMQService _rabbitMQService;
+        private readonly ILogger<RabbitMQController> _logger;
+
+        public RabbitMQController(RabbitMQService rabbitMQService, ILogger<RabbitMQController> logger)
+        {
+            _rabbitMQService = rabbitMQService;
+            _logger = logger;
+        }
+
+        [HttpGet("start")]
+        public IActionResult StartRabbitMQ()
+        {
+            _logger.LogInformation("StartRabbitMQ() :: entered");
+            _logger.LogInformation("StartRabbitMQ() :: exited");
+            return Ok("RabbitMQ Service Started");
+        }
     }
 }
